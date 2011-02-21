@@ -10,14 +10,14 @@ pdf.begin(pdf.PORTRAIT);
 
 pdf.kern = false;
 pdf.setFont(10, "Times Roman");
-pdf.setLine("000000", pdf.LINE_SOLID, .2);
+pdf.setLine("000000", pdf.LINE_SOLID, 0.2);
 
 
-pdf.startHeader(0, .75);
+pdf.startHeader(0, 0.75);
 pdf.textCenter(0, 0, pdf.pageWidth, "Font Kerning", 18, null, true);
 pdf.endHeader();
 
-pdf.startFooter(0, -.5);
+pdf.startFooter(0, -0.5);
 pdf.textCenter(0, 0, pdf.pageWidth, formatDate(new Date(), "m/d/Y"));
 pdf.endFooter();
 
@@ -38,9 +38,9 @@ pdf.newPage();
 pdf.setFont(11);
 pdf.fontAlignment = pdf.ASCENDER;
 pdf.kern = false;
-pdf.textCenter(.1, 2.8, 4, "Kerning Off");
-textHeight = pdf.textWrap(.1, 3, 4, 6, gettysburg, pdf.ALIGN_LEFT);
-pdf.rectangle(.1, 3, 4, textHeight);
+pdf.textCenter(0.1, 2.8, 4, "Kerning Off");
+textHeight = pdf.textWrap(0.1, 3, 4, 6, gettysburg, pdf.ALIGN_LEFT);
+pdf.rectangle(0.1, 3, 4, textHeight);
 pdf.kern = true;
 pdf.textCenter(4.3, 2.8, 4, "Kerning On");
 textHeight = pdf.textWrap(4.3, 3, 4, 6, gettysburg, pdf.ALIGN_LEFT);
@@ -48,9 +48,9 @@ pdf.rectangle(4.3, 3, 4, textHeight);
 
 pdf.newPage();
 pdf.kern = false;
-pdf.textCenter(.1, 2.8, 4, "Kerning Off");
-textHeight = pdf.textWrap(.1, 3, 4, 6, gettysburg, pdf.ALIGN_CENTER);
-pdf.rectangle(.1, 3, 4, textHeight);
+pdf.textCenter(0.1, 2.8, 4, "Kerning Off");
+textHeight = pdf.textWrap(0.1, 3, 4, 6, gettysburg, pdf.ALIGN_CENTER);
+pdf.rectangle(0.1, 3, 4, textHeight);
 pdf.kern = true;
 pdf.textCenter(4.3, 2.8, 4, "Kerning On");
 textHeight = pdf.textWrap(4.3, 3, 4, 6, gettysburg, pdf.ALIGN_CENTER);
@@ -58,9 +58,9 @@ pdf.rectangle(4.3, 3, 4, textHeight);
 
 pdf.newPage();
 pdf.kern = false;
-pdf.textCenter(.1, 2.8, 4, "Kerning Off");
-textHeight = pdf.textWrap(.1, 3, 4, 6, gettysburg, pdf.ALIGN_RIGHT);
-pdf.rectangle(.1, 3, 4, textHeight);
+pdf.textCenter(0.1, 2.8, 4, "Kerning Off");
+textHeight = pdf.textWrap(0.1, 3, 4, 6, gettysburg, pdf.ALIGN_RIGHT);
+pdf.rectangle(0.1, 3, 4, textHeight);
 pdf.kern = true;
 pdf.textCenter(4.3, 2.8, 4, "Kerning On");
 textHeight = pdf.textWrap(4.3, 3, 4, 6, gettysburg, pdf.ALIGN_RIGHT);
@@ -71,10 +71,10 @@ var text = "WAWA WAWA AVAV AVAV ToTo ToTo WAWA WAWA AVAV AVAV To To To To";
 pdf.newPage();
 pdf.clearWatermark();
 pdf.kern = false;
-pdf.textCenter(.1, 2.8, 4, "Kerning Off");
-pdf.textWrap(.1, 3, 4, 1, text, pdf.ALIGN_LEFT);
+pdf.textCenter(0.1, 2.8, 4, "Kerning Off");
+pdf.textWrap(0.1, 3, 4, 1, text, pdf.ALIGN_LEFT);
 pdf.kern = true;
-pdf.textCenter(.1, 3.8, 4, "Kerning On");
-pdf.textWrap(.1, 4, 4, 1, text, pdf.ALIGN_LEFT);
+pdf.textCenter(0.1, 3.8, 4, "Kerning On");
+pdf.textWrap(0.1, 4, 4, 1, text, pdf.ALIGN_LEFT);
 
 fs.writeFileSync("kern.pdf", pdf.toString());

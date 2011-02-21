@@ -19,17 +19,17 @@ var fs = require("fs"),
 	topMargin = 1.5,
 	bottomMargin = 2.5,
 	leftMargin = 1.25,
-	rightMargin = .75,
+	rightMargin = 0.75,
 	i, n, x, y, h, cellWidth, cellHeight, barWidth, maxVal, scale, tick;
 
 pdf.begin(pdf.PORTRAIT);
 
 cellWidth = (pdf.pageWidth-leftMargin-rightMargin) / data.length;
 cellHeight = (pdf.pageHeight-topMargin-bottomMargin) / 10;
-barWidth = cellWidth * .75;
+barWidth = cellWidth * 0.75;
 
 // Build the graph
-pdf.textCenter(0,  .75, pdf.pageWidth, "Bar Graph", 22, null, true);
+pdf.textCenter(0,  0.75, pdf.pageWidth, "Bar Graph", 22, null, true);
 pdf.textCenter(0, 1.10, pdf.pageWidth, "With meaningless data", 14, null, true);
 pdf.grid(leftMargin, topMargin, 1, pdf.pageWidth-leftMargin-rightMargin, 10, cellHeight, "c0c0c0");
 pdf.grid(leftMargin, topMargin, 1, pdf.pageWidth-leftMargin-rightMargin, 1, cellHeight*10, "000000");
@@ -43,7 +43,7 @@ scale = Math.pow(10, (maxVal.toString().length-1)) * (parseInt(maxVal.toString()
 tick = scale/10;
 // Do Tick indicators (on left)
 for (n = tick, i = 0; i < 10; i++) {
-	pdf.textRight(leftMargin-1, topMargin+((9-i)*cellHeight)+.03, .95, n);
+	pdf.textRight(leftMargin-1, topMargin+((9-i)*cellHeight)+0.03, 0.95, n);
 	n += tick;
 }
 
@@ -52,9 +52,9 @@ for (i = 0; i < data.length; i++) {
 	x = leftMargin + (i * cellWidth);
 	y = (pdf.pageHeight-bottomMargin);
 	h = (data[i].value / tick) * cellHeight;
-	pdf.textRotated(x + (cellWidth * .5)+.05, y+.1, 45, data[i].name, 9);
-	pdf.rectangle(x + (cellWidth * .125), y, barWidth, -h, "000000", barColors[i%barColors.length]);
-	pdf.textCenter(x, y-h-.075, cellWidth, data[i].value, 9);
+	pdf.textRotated(x + (cellWidth * 0.5)+0.05, y+0.1, 45, data[i].name, 9);
+	pdf.rectangle(x + (cellWidth * 0.125), y, barWidth, -h, "000000", barColors[i%barColors.length]);
+	pdf.textCenter(x, y-h-0.075, cellWidth, data[i].value, 9);
 }
 
 fs.writeFileSync("graph.pdf", pdf.toString());
