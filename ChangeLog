@@ -1,4 +1,8 @@
-= 0.2.0 / 2011-02-20
+= 0.3.0 / 2011-03-01
+
+* Added image capability, BMP only (jfo)
+
+= 0.2.0 / 2011-02-21
 
 * Added reporting capability (jfo)
 
@@ -6,10 +10,10 @@
 
 * Added earthquake.js (and earthquake.json) to examples (jfo)
 
-= 0.1.1 / 2011-02-20
+= 0.1.1 / 2011-02-21
 
 * Cleaned with JSLint (jfo)
 
-= 0.1.0 / 2011-02-19
+= 0.1.0 / 2011-02-20
 
 * Initial Commit (jfo)
